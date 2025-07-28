@@ -1,9 +1,10 @@
+
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "20.8.4"
 
   cluster_name    = "gitops-demo"
-  cluster_version = "1.32"
+  cluster_version = "1.27"
   subnet_ids      = var.subnet_ids
   vpc_id          = var.vpc_id
 

@@ -1,7 +1,7 @@
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  version         = "20.8.4"
+  version         = "19.15.3"
 
   cluster_name    = "gitops-demo"
   cluster_version = "1.27"

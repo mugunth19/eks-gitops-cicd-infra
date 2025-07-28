@@ -1,7 +1,6 @@
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "3.19.0"
+  version = "5.8.1"
 
   name = "gitops-vpc"
   cidr = "10.0.0.0/16"
@@ -18,4 +17,16 @@ module "vpc" {
   tags = {
     Project = "gitops-demo"
   }
+}
+
+output "vpc_id" {
+  value = module.vpc.vpc_id
+}
+
+output "public_subnets" {
+  value = module.vpc.public_subnets
+}
+
+output "private_subnets" {
+  value = module.vpc.private_subnets
 }

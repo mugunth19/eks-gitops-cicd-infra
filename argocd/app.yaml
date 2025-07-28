@@ -1,0 +1,18 @@
+apoVersion: argoproj.io/v1apha1
+kind: application
+metadata:
+  name: my-python-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mugunth19/eks-gitops-cicd-infra
+    targetRevision: HEAD
+    path: helm/my-python-pp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

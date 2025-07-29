@@ -4,7 +4,7 @@ on:
     paths:
       - 'app/**'
       - 'helm/**'
-  pull_requests:
+  pull_request:
 
 
 jobs:
@@ -14,5 +14,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build Docker image
       run: docker build -t test-image ./app
+    - name: set up helm
+      uses: azure/setup-helm@v3
+      with:
+        version: v3.9.0
     - name: Lint helm Chart
       run: helm lint ./helm/my-python-app

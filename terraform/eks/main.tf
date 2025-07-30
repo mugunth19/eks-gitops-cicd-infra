@@ -1,10 +1,10 @@
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  version         = "19.15.3"
+  version         = "20.8.4"
 
   cluster_name    = "gitops-demo"
-  cluster_version = "1.27"
+  cluster_version = "1.33"
   subnet_ids      = var.subnet_ids
   vpc_id          = var.vpc_id
 
@@ -18,8 +18,9 @@ module "eks" {
       max_size     = 3
       min_size     = 1
 
-      instance_types = ["t3.medium"]
+      instance_types = ["t3.micro"]
       capacity_type  = "ON_DEMAND"
+      subnet_ids      = var.subnet_ids
     }
   }
 

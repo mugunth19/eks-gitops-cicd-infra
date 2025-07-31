@@ -36,7 +36,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t $ECR_REPOSITORY ./Docker
+          docker build -t $ECR_REPOSITORY ./Docker/Dockerfile .
           docker tag $ECR_REPOSITORY:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:${{ env.IMAGE_TAG }}
 
       - name: Push Docker image to ECR

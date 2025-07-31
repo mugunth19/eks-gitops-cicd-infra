@@ -8,6 +8,7 @@ on:
       - 'app/**'
       - 'helm/**'
   pull_request:
+  workflow_dispatch:
 
 env:
   AWS_REGION: ap-south-1
@@ -57,3 +58,4 @@ jobs:
             --set image.repository=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY \
             --set image.tag=${{ env.IMAGE_TAG }} \
             --namespace default --create-namespace
+        

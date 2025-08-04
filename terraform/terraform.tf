@@ -21,4 +21,6 @@ module "eks" {
   source     = "./eks"
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
+  admin_user_arn = var.admin_user_arn
+
 }

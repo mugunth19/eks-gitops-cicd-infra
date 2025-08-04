@@ -8,4 +8,4 @@ RUN pip install  --no-cache-dir flask
 
 EXPOSE 8080
 
-CMD ['python','main.py']
+CMD ["python","main.py"]

@@ -1,5 +1,5 @@
-apoVersion: argoproj.io/v1apha1
-kind: application
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: my-python-app
   namespace: argocd

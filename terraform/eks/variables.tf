@@ -8,3 +8,11 @@ variable "subnet_ids" {
   description = "List of subnet IDs for EKS worker nodes"
   type        = list(string)
 }
+
+variable "admin_user_arn" {
+  description = "Admin user arn for access entry"
+  type        = string
+}
+
+
+
